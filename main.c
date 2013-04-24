@@ -1,5 +1,16 @@
 #include "stm32f10x.h"
 
+/*
+ * Enum specifying the device LEDs used in LED-operating functions
+ */
+typedef enum {
+    LED_D1,
+    LED_D2,
+    LED_D3,
+    LED_D4
+} device_led;
+
+
 void delay(void)
 {
     int i = 0xAFFFF;
@@ -41,12 +52,6 @@ void init_leds(void)
     GPIO_ResetBits(GPIOD, GPIO_Pin_13 | GPIO_Pin_6);
 }
 
-typedef enum {
-    LED_D1,
-    LED_D2,
-    LED_D3,
-    LED_D4
-} device_led;
 
 void toggle_led(device_led led, int toggle)
 {
