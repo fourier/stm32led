@@ -1,4 +1,4 @@
-Led blinking demo for STM32 model STM32F102VET6
+Led blinking demo for STM32 model STM32F103VET6
 ===============================================
 
 Based on STM32F103ZET6Led example taken from http://www.scienceprog.com/led-blinky-demo-on-stm32f103zet6-development-board/ 

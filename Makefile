@@ -88,9 +88,9 @@ endif
 FNAMES = $(foreach file, $(SRC), $(notdir $(file)))
 OBJECTS = $(foreach file, $(FNAMES:.c=.o), $(OBJDIR)/$(file))
 
-CFLAGS =  -mcpu=$(MCU) -gdwarf-2 -mthumb -fomit-frame-pointer -Wall $(DEFS)
+CFLAGS =  -mcpu=$(MCU) -gdwarf-2 -ggdb -mthumb -fomit-frame-pointer -Wall $(DEFS)
 #CFLAGS =  -mcpu=$(MCU) -gdwarf-2 -mthumb -fomit-frame-pointer -Wall -Wstrict-prototypes $(DEFS)
-LDFLAGS = -mcpu=$(MCU) -mthumb -nostartfiles -T$(LDSCRIPT) -Wl,-Map=$(FULL_PRJ).map,--cref,--no-warn-mismatch
+LDFLAGS = -mcpu=$(MCU) -mthumb -gdwarf-2 -ggdb -nostartfiles -T$(LDSCRIPT) -Wl,-Map=$(FULL_PRJ).map,--cref,--no-warn-mismatch
 
 # Generate dependency information
 CFLAGS += -MD -MP -MF .dep/$(@F).d
@@ -117,12 +117,12 @@ $(OBJECTS): | $(OBJDIR)
 
 %.o : # Dependencies declared above
 	@echo Compiling $< into $@
-	@$(CC) -c $(CFLAGS) -I . $(INCDIR) $< -o $@
+	$(CC) -c $(CFLAGS) -I . $(INCDIR) $< -o $@
 
 
 %elf: $(OBJECTS)
 	@echo Linking $@
-	@$(CC) $(OBJECTS) $(LDFLAGS) -o $@
+	$(CC) $(OBJECTS) $(LDFLAGS) -o $@
 
 %hex: %elf
 	@echo Creating $@
