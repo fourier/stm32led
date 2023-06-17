@@ -1,32 +1,11 @@
-Led blinking demo for STM32 model STM32F103VET6
-===============================================
+# Give Up GitHub
 
-Based on STM32F103ZET6Led example taken from http://www.scienceprog.com/led-blinky-demo-on-stm32f103zet6-development-board/ 
+This project has given up GitHub.  ([See Software Freedom Conservancy's *Give Up  GitHub* site for details](https://GiveUpGitHub.org).)
 
-Hardware configuration
-======================
-Development board used: HY-STM32_100P with 2.4" LCD (see http://www.youtube.com/watch?v=sqg3AJ9PEVg similar board)
-RAM: 64kb
-FLASH: 512kb
-Led configuration according to the datashit:
- * Led D1: PC6(from schematics), means port GPIOC, pin 6
- * Led D2: PC7(from schematics), means port GPIOC, pin 7
- * Led D3: Pd13(from schematics), means port GPIOD, pin 13
- * Led D4: PD6(from schematics), means port GPIOD, pin 6
+You can now find this project at [https://codeberg.org/fourier/stm32led](https://codeberg.org/fourier/stm32led) instead.
 
-Dependencies
-============
-In order to use one must download the STM32 Standard Peripherial Library:
- * Either dowload it here: http://www.st.com/st-web-ui/static/active/en/st_prod_software_internet/resource/technical/software/firmware/stsw-stm32054.zip
- * Or go to st.com, search for your product (STM32F103VET in my case), go to Design Resources tab and find it (the product name STSW-STM32054 in my case)
-and extract it to the upper directory, or change the path in Makefile.
+Any use of this project's code by GitHub Copilot, past or present, is done without our permission.  We do not consent to GitHub's use of this project's code in Copilot.
 
-Development environment
-=======================
- * Platform: Mac OS X 10.8 
- * Toolchain: Sourcery CodeBench Lite toolchain, build from the source using James Sneyder's Makefile(https://github.com/jsnyder/arm-eabi-toolchain)
- * USBtoRS232 device: PL2303 with the driver http://xbsd.nl/2011/07/pl2303-serial-usb-on-osx-lion.html
- * In order to flash the program one can use the https://code.google.com/p/stm32flash/ flash program
-   Run the 'make flash' command to flash (assuming that the RS232 device is /dev/tty.PL2303-000013FA and stm32flash is in PATH)
+Join us; you can [give up GitHub](https://GiveUpGitHub.org) too!
 
-
+![Logo of the GiveUpGitHub campaign](https://sfconservancy.org/img/GiveUpGitHub.png)
